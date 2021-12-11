@@ -1,1 +1,22 @@
-<p>user works!</p>
+<div class="container">
+    <h2>User Information Table</h2>
+      <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>User Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let user of User">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.username}}</td>
+        </tr>        
+      </tbody>
+    </table>
+  </div>
+  

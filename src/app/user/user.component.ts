@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  User: any;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    let responce = this.http.get("https://jsonplaceholder.typicode.com/users");
+    responce.subscribe(data => console.log(data));
+    responce.subscribe((data) => this.User = data);
   }
-
 }
